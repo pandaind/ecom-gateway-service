@@ -1,0 +1,31 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: gateway-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: order-service
+        uri: lb://ORDER-SERVICE
+        predicates:
+        - Path=/api/orders, /api/orders/**, /api/cart, /api/cart/**
+      - id: product-service
+        uri: lb://PRODUCT-SERVICE
+        predicates:
+        - Path=/api/products, /api/products/**, /api/admin/products, /api/admin/products/**
+      - id: user-service
+        uri: lb://USER-SERVICE
+        predicates:
+        - Path=/api/users, /api/users/**
+
