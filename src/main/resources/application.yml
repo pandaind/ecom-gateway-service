@@ -28,4 +28,8 @@ spring:
         uri: lb://USER-SERVICE
         predicates:
         - Path=/api/users, /api/users/**
+      - id: inventory-service
+        uri: lb://INVENTORY-SERVICE
+        predicates:
+        - Path=/api/inventories, /api/inventories/**
 
