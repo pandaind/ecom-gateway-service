@@ -1,7 +1,10 @@
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_URL}
+
+
+debug: ${DEBUG:false}
 
 spring:
   application:
@@ -9,7 +12,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://localhost:9090
+        url: ${BOOT_ADMIN_URL:http://localhost:9090}
   cloud:
     gateway:
       discovery:
@@ -32,4 +35,3 @@ spring:
         uri: lb://INVENTORY-SERVICE
         predicates:
         - Path=/api/inventories, /api/inventories/**
-
