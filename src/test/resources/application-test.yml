@@ -1,0 +1,13 @@
+debug: ${DEBUG:false}
+
+eureka:
+  client:
+    enabled: false
+
+spring:
+  application:
+    name: gateway-service
+  boot:
+    admin:
+      client:
+        enabled: false
