@@ -1,9 +1,9 @@
 package com.example.demo.gatewayservice.config;
 
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Configuration;
 
-@EnableEurekaClient
+@EnableDiscoveryClient
 @Configuration
 public class EurekaConfiguration {
 }
