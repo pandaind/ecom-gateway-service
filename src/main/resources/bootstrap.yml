@@ -6,24 +6,16 @@ spring:
   cloud:
     config:
       uri: ${CONFIG_SERVER:http://localhost:8888}
-    bus:
-      enabled: true
-      refresh:
-        enabled: true
-      env:
-        enabled: true
-    stream:
-      kafka:
-        binder:
-          auto-add-partitions: true
-
-eureka:
-  client:
-    service-url:
-      default-zone: ${EUREKA_URL}
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
-    appname: ${spring.application.name}
+#    bus:
+#      enabled: true
+#      refresh:
+#        enabled: true
+#      env:
+#        enabled: true
+#    stream:
+#      kafka:
+#        binder:
+#          auto-add-partitions: true
 
 server:
   port: 8080
