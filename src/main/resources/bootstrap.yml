@@ -6,16 +6,16 @@ spring:
   cloud:
     config:
       uri: ${CONFIG_SERVER:http://localhost:8888}
-#    bus:
-#      enabled: true
-#      refresh:
-#        enabled: true
-#      env:
-#        enabled: true
-#    stream:
-#      kafka:
-#        binder:
-#          auto-add-partitions: true
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      env:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          auto-add-partitions: true
 
 server:
   port: 8080
