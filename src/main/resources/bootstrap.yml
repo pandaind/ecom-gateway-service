@@ -17,6 +17,14 @@ spring:
         binder:
           auto-add-partitions: true
 
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URL}
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    appname: ${spring.application.name}
+
 server:
   port: 8080
 
